@@ -3,9 +3,13 @@ PlayersList = new Mongo.Collection('players');
 if(Meteor.isClient){
   console.log("hello Client");
 
-  Template.leaderboard.player = function(){
-    return "Some test text";
-  }
+  Template.leaderboard.helpers({
+    'player': function(){
+      return PlayersList.find();
+    }
+
+  });
+  
 
 
 }
