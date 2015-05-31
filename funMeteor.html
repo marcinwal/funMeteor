@@ -9,7 +9,8 @@
 <template name="leaderboard">
 <ul>
   {{#each player}}
-    <li>{{name}}: {{score}}</li>
+    <li class="player {{selectedClass}}">{{name}}: {{score}} </li>
   {{/each}}
+  <input type="button" class="increament" value="Give 5">
 </ul>
 </template>
