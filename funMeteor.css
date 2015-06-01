@@ -2,3 +2,8 @@
 .selected{
   background-color: yellow;
 }
+
+.login{
+  padding-right: 10em; 
+  float: right;
+}
