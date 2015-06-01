@@ -2,7 +2,7 @@
   <title>MeteorFastFun</title>
 </head>
 <body>
-  <h1>Welcome to the Fun</h1>
+  <h1>Welcome to the Fun</h1><h3 class="login">{{>loginButtons}}</h3>
   {{> leaderboard}}
 </body>
 
@@ -22,8 +22,10 @@
 </template>
 
 <template name="addPlayerForm">
-  <form>
-    <input type="text" name="playerName">
-    <input type="submit" value="Add Player">
-  </form>
+  {{#if currentUser}}
+    <form>
+      <input type="text" name="playerName">
+      <input type="submit" value="Add Player">
+    </form>
+  {{/if}}
 </template>
