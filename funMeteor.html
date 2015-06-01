@@ -13,6 +13,16 @@
   {{/each}}
   <input type="button" class="increament" value="Give 5">
   <input type="button" class="decrement" value="Take 5">
-  <li>Selected player: {{showSelectedPlayer.name}}</li>
+  {{#if showSelectedPlayer}}
+    <li>Selected player: {{showSelectedPlayer.name}}</li>
+  {{/if}}
 </ul>
+{{>addPlayerForm}}
+</template>
+
+<template name="addPlayerForm">
+  <form>
+    <input type="text" name="playerName">
+    <input type="submit" value="Add Player">
+  </form>
 </template>

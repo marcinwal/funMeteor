@@ -38,6 +38,14 @@ if(Meteor.isClient){
     }
   });
 
+  Template.addPlayerForm.events({
+    'submit form': function(event){
+      event.preventDefault();
+      console.log('submited form');
+      console.log(event.type);
+    }
+  });
+
 }
 if(Meteor.isServer){
   console.log("hello Server")
