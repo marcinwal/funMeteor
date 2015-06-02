@@ -4,12 +4,14 @@ if(Meteor.isClient){
 
   console.log("hello Client");
 
-
+  Meteor.subscribe('thePlayers');
 
   Template.leaderboard.helpers({
     'player': function(){
       var currentUserId = Meteor.userId();
-      return PlayersList.find({createdBy:currentUserId},{sort: {score: -1,name: 1}});
+      // return PlayersList.find({createdBy:currentUserId},{sort: {score: -1,name: 1}});
+      // changing thanks to subscription
+      return PlayersList.find({},{sort:{score: -1,name: 1}});
     },
     'selectedClass': function(){
       var playerId = this._id;
@@ -59,6 +61,11 @@ if(Meteor.isClient){
 }
 if(Meteor.isServer){
   console.log("hello Server")
+
+  Meteor.publish('thePlayers',function(){
+    var currentUserId = this.userId;
+    return PlayersList.find();
+  });
 }
 
 
