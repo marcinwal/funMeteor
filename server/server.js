@@ -1,4 +1,4 @@
-  console.log("hello Server")
+  console.log("I am running on the server");
 
   Meteor.publish('thePlayers',function(){
     var currentUserId = this.userId;

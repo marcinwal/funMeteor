@@ -1,5 +1,5 @@
 
-  console.log("hello Client");
+  console.log("I am running on the client");
 
   Meteor.subscribe('thePlayers');
 
